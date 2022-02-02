@@ -1,0 +1,5 @@
+[user]
+	name = name
+	username = username
+	email = email
+	signingkey = signingkey

@@ -1,0 +1,10 @@
+# evercrisp
+alias evercrisp='git --git-dir=$HOME/.evercrisp --work-tree=$HOME'
+
+# scrcpy
+alias scrcpy-base='scrcpy --prefer-text --stay-awake --disable-screensaver --turn-screen-off --show-touches'
+alias scrcpy-low='scrcpy-base --bit-rate 2M --max-size 800 --max-fps 30'
+alias scrcpy-high='scrcpy-base --bit-rate 200M'
+
+# srt-clean
+alias srt-clean-recursively='find . -name "*.srt" -exec srt-clean "{}" \;'

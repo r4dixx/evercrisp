@@ -1,0 +1,19 @@
+#!/bin/bash
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo -e;
+echo "${bold}MAC - APP STORE${normal}"; echo -e;
+echo "The following apps are outdated:";
+mas outdated; echo -e;
+echo "Upgrading..."; echo -e;
+mas upgrade; echo -e;
+
+echo "${bold}HOMEBREW${normal}"; echo -e;
+echo "Upgrading..."; echo -e;
+brew upgrade;
+
+echo "${bold}HOMEBREW - CASKS${normal}"; echo -e;
+echo "Upgrading..."; echo -e;
+brew upgrade --cask

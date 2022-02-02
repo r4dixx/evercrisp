@@ -1,0 +1,156 @@
+# Starship settings
+# See https://starship.rs/config/#prompt
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[hostname]
+ssh_only = true
+
+[memory_usage]
+symbol = " "
+
+[battery]
+charging_symbol = " charging... "
+discharging_symbol = " battery at "
+
+[[battery.display]]
+threshold = 15
+style = "red"
+
+[sudo]
+style = "bold green"
+symbol = "root "
+disabled = false
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = " "
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+
+[hg_branch]
+symbol = " "
+
+[package]
+symbol = " "
+
+[aws]
+symbol = " "
+
+[cmake]
+symbol = "卑 "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = "什 "
+
+[deno]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[erlang]
+symbol = " "
+
+[gcloud]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[helm]
+symbol = "ﴱ "
+
+[java]
+symbol = " "
+
+[jobs]
+symbol = "✦ "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = "🅺 "
+
+[kubernetes]
+symbol = "ﴱ "
+
+[lua]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = "🐫 "
+
+[openstack]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[purescript]
+symbol = "<=> "
+
+[python]
+symbol = " "
+
+[red]
+symbol = "卑 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[singularity]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
+[terraform]
+symbol = " "
+
+[vagrant]
+symbol = "🆅 "
+
+[vcsh]
+symbol = " "
+
+[zig]
+symbol = "↯ "

@@ -1,0 +1,15 @@
+[submodule "alias-tips"]
+	path = .oh-my-zsh/custom/plugins/alias-tips
+	url = git@github.com:djui/alias-tips.git
+[submodule "git-flow-completion"]
+	path = .oh-my-zsh/custom/plugins/git-flow-completion
+	url = git@github.com:bobthecow/git-flow-completion
+[submodule "zsh-autosuggestions"]
+	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh-completions"]
+	path = .oh-my-zsh/custom/plugins/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "zsh-syntax-highlighting"]
+	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git

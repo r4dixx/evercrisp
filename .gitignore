@@ -1,0 +1,15 @@
+.DS_Store
+.evercrisp
+.cache
+.ssh
+.bash_history
+.bash_sessions
+.gitconfig_user_perso
+.gitconfig_user_pro
+.gnupg
+.shpotify.cfg
+.zsh_history
+.zsh_sessions
+.python_history
+.Spotlight-V100
+.Trashes
