@@ -12,6 +12,8 @@ As Atlassian puts it:
 
 ## How does it work exactly? 
 
+Head to [SETUP.md](SETUP.md) and [BACKUP.md](BACKUP.md) for more advanced documentation.
+
 - Clone this repo into a bare repository:  
 ```sh
 git clone --bare git@github.com:r4dixx/evercrisp.git $HOME/.evercrisp
