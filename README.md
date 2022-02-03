@@ -26,7 +26,7 @@ That's it! It's basically just a git alias.
 
 **Here are the complete steps to get started: [How to](https://github.com/r4dixx/evercrisp/wiki/1.-Home#1-howto)**
 
-[Head to the Wiki to dive into more advanced configuration](https://github.com/r4dixx/evercrisp/wiki)
+Read the [Setup](https://github.com/r4dixx/evercrisp/wiki/2.-Setup) and [Backup](https://github.com/r4dixx/evercrisp/wiki/3.-Backup) sections for more advanced configuration steps
 
 ## Why `evercrisp`?
 
