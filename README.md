@@ -8,11 +8,13 @@ The ultimate developer configuration for macOS devices
 
 As Atlassian puts it:
 
-> No extra tooling, no symlinks, files are tracked on a version control system, you can use different branches for different computers, you can replicate you configuration easily on new installation.
+> No extra tooling, no symlinks, files are tracked on a version control system, you can use different branches for different computers, you can replicate your configuration easily on new installation.
 
 ## How does it work exactly? 
 
-`evercrisp` works just like `git`. You can add, commit, pull, push any new or existing file. Here's a simple example:
+`evercrisp` works just like `git`. You can add, commit, pull, push any new or existing file.
+
+Here's a simple example:
 
 ```sh
 evercrisp add file
@@ -20,7 +22,7 @@ evercrisp commit -m "Adding new file to my dotfiles"
 evercrisp push
 ```
 
-That's it! It's just an alias.
+That's it! It's basically just a git alias.
 
 **Here are the complete steps to get started: [How to](https://github.com/r4dixx/evercrisp/wiki/1.-Home#1-howto)**
 
