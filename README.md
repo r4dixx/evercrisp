@@ -20,9 +20,11 @@ evercrisp commit -m "Adding new file to my dotfiles"
 evercrisp push
 ```
 
-That's it!
+That's it! It's just an alias.
 
-[Head to the Wiki to know everything and dive into more advanced configuration](https://github.com/r4dixx/evercrisp/wiki)
+**Here are the complete steps to get started: [How to](https://github.com/r4dixx/evercrisp/wiki/1.-Home#1-howto)**
+
+[Head to the Wiki to dive into more advanced configuration](https://github.com/r4dixx/evercrisp/wiki)
 
 ## Why `evercrisp`?
 
