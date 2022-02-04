@@ -1,0 +1,57 @@
+#!/bin/bash
+
+echo -e
+
+cd $HOME
+git clone --bare git@github.com:r4dixx/evercrisp-private.git .evercrisp
+evercrisp='/usr/bin/git --git-dir=.evercrisp --work-tree=.'
+
+echo -e
+
+echo "Backing up files that would be overwritten by checkout..."
+mkdir -p $HOME/.evercrisp-backup && $evercrisp checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $HOME/.evercrisp-backup/{}
+echo "Done"
+
+echo -e
+
+echo "Conflicting files can be found at ~/.evercrisp-backup"
+read -p "Review them (y/N)? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Opening ~/.evercrisp-backup..."
+    open $HOME/.evercrisp-backup
+else
+    echo "Skipping..."
+fi
+
+echo -e
+
+echo "Checking out files..."
+$evercrisp checkout
+echo "Done."
+
+echo -e
+
+read -p "Would you like to hide untracked files (recommended) (y/N) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    $evercrisp config --local status.showUntrackedFiles no
+    echo "Done."
+else
+    echo "Skipping..."
+fi
+
+echo -e
+
+read -p "Would you like to get submodules? (oh-my-zsh plugins) (y/N) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+
+    $evercrisp submodule update --init --recursive
+    echo "Done."
+else
+    echo "Skipping..."
+fi

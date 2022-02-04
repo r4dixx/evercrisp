@@ -22,9 +22,9 @@ evercrisp commit -m "Adding new file to my dotfiles"
 evercrisp push
 ```
 
-That's it! It's basically just a git alias.
+That's it! It's basically just a git alias. Run [init-evercrisp](.local/bin/init-evercrisp) to get started. 
 
-**Here are the complete steps to get started: [How to](https://github.com/r4dixx/evercrisp/wiki/1.-Home#1-howto)**
+**Here are the complete steps: [How to](https://github.com/r4dixx/evercrisp/wiki/1.-Home#1-howto)**
 
 Read the [Setup](https://github.com/r4dixx/evercrisp/wiki/2.-Setup) and [Backup](https://github.com/r4dixx/evercrisp/wiki/3.-Backup) sections for more advanced configuration steps
 
