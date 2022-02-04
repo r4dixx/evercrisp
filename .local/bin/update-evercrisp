@@ -5,10 +5,10 @@ normal=$(tput sgr0)
 
 echo -e;
 echo "${bold}EVERCRISP - STATUS${normal}"; echo -e;
-git --git-dir=$HOME/.evercrisp --work-tree=$HOME status; echo -e;
+evercrisp status; echo -e;
 
 echo "${bold}EVERCRISP - PULLING CHANGES${normal}"; echo -e;
-git --git-dir=$HOME/.evercrisp --work-tree=$HOME pull; echo -e;
+evercrisp pull; echo -e;
 
 echo "${bold}EVERCRISP - UPDATING SUBMODULES${normal}"; echo -e;
-git --git-dir=$HOME/.evercrisp --work-tree=$HOME submodule update --remote
+evercrisp submodule update --remote
