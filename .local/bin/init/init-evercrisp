@@ -6,6 +6,13 @@ cd $HOME
 git clone --bare git@github.com:r4dixx/evercrisp-private.git .evercrisp
 evercrisp='/usr/bin/git --git-dir=.evercrisp --work-tree=.'
 
+echo -e 
+
+echo "Adding r4dixx/evercrisp as upstream (with pushes disabled)..."
+$evercrisp remote add upstream git@github.com:r4dixx/evercrisp.git
+$evercrisp remote set-url --push upstream DISABLED
+echo "Done."
+
 echo -e
 
 echo "Backing up files that would be overwritten by checkout..."
