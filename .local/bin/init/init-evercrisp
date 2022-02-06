@@ -1,10 +1,11 @@
 #!/bin/bash
 
+evercrisp='/usr/bin/git --git-dir=.evercrisp --work-tree=.'
+
 echo -e
 
 cd $HOME
 git clone --bare git@github.com:r4dixx/evercrisp-private.git .evercrisp
-evercrisp='/usr/bin/git --git-dir=.evercrisp --work-tree=.'
 
 echo -e 
 
