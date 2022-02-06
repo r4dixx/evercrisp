@@ -2,7 +2,7 @@
 export LANG=en_US.UTF-8
 
 # Local executables
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 # Oh My ZSH location
 # https://github.com/ohmyzsh/ohmyzsh#custom-directory
