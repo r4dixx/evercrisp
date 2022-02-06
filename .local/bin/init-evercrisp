@@ -33,25 +33,24 @@ echo "Done."
 
 echo -e
 
-read -p "Would you like to hide untracked files (recommended) (y/N) " -n 1 -r
+read -p "Would you like to hide untracked files (recommended) (Y/n) " -n 1 -r
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $REPLY =~ ^[Nn]$ ]]
 then
+    echo "Skipping..."
+else
     $evercrisp config --local status.showUntrackedFiles no
     echo "Done."
-else
-    echo "Skipping..."
 fi
 
 echo -e
 
-read -p "Would you like to get submodules? (oh-my-zsh plugins) (y/N) " -n 1 -r
+read -p "Would you like to get submodules? (oh-my-zsh plugins) (Y/n) " -n 1 -r
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $REPLY =~ ^[Nn]$ ]]
 then
-
+    echo "Skipping..."
+else
     $evercrisp submodule update --init --recursive
     echo "Done."
-else
-    echo "Skipping..."
 fi
