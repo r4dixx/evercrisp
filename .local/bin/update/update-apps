@@ -11,9 +11,9 @@ echo "Upgrading..."; echo -e;
 mas upgrade; echo -e;
 
 echo "${bold}HOMEBREW${normal}"; echo -e;
-echo "Upgrading..."; echo -e;
-brew upgrade;
+echo "Updating package definitions (and homebrew itself)..."; echo -e;
+brew update;
 
-echo "${bold}HOMEBREW - CASKS${normal}"; echo -e;
-echo "Upgrading..."; echo -e;
-brew upgrade --cask
+echo "${bold}HOMEBREW - PACKAGES${normal}"; echo -e;
+echo "Upgrading everything in greedy mode..."; echo -e;
+brew upgrade --greedy
