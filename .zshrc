@@ -49,8 +49,8 @@ plugins=(
   common-aliases
 
   # Copies the path of your current folder to the system clipboard
-  # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/copydir
-  copydir
+  # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath
+  copypath
 
   # Copies the content of a file to the system clipboard
   # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/copyfile
