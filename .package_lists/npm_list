@@ -12,6 +12,7 @@ is-github-down
 is-online-cli
 is-up-cli
 npm
+npm-check-updates
 oh-cli
 open-on-android
 purrge
