@@ -222,6 +222,17 @@
       "isEnable": true
     },
     {
+      "pluginId": "com.suusan2go.kotlin-fill-class",
+      "pluginName": "Kotlin Fill Class",
+      "dependencyPluginIds": [
+        "com.intellij.modules.lang",
+        "org.jetbrains.kotlin"
+      ],
+      "optionalDependencyPluginIds": [],
+      "isBundle": false,
+      "isEnable": true
+    },
+    {
       "pluginId": "izhangzhihao.rainbow.brackets",
       "pluginName": "Rainbow Brackets",
       "dependencyPluginIds": [
