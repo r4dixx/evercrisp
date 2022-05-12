@@ -1,5 +1,5 @@
 java zulu-11.54.23
-gradle 7.2
+gradle 7.4.2
 nodejs 16.13.2
 python 3.10.2
 ruby 3.1.0
