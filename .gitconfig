@@ -20,8 +20,8 @@
 [gpg]
 	program = /usr/local/bin/gpg
 [alias]
-	cleanup-full = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev|compat)\" | xargs git branch -d && git remote prune origin
-	cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev|compat)\" | xargs git branch -d
+	cleanup-full = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev|compat|qa)\" | xargs git branch -d && git remote prune origin
+	cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev|compat|qa)\" | xargs git branch -d
 	cleanup-refs = remote prune origin
 	up = pull --rebase --autostash
 
