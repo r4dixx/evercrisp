@@ -11,6 +11,9 @@ HYPHEN_INSENSITIVE="true"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="%F{yellow}%f"
 
+# Hide difference between trailing new line or not on command output
+PROMPT_EOL_MARK=''
+
 # Uncomment the following lines to change the auto-update behavior
 zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically withou889t asking
