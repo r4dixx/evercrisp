@@ -1,4 +1,4 @@
-java zulu-11.54.23
+java zulu-11.60.19
 gradle 7.4.2
 nodejs 16.13.2
 python 3.10.2
