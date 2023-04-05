@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 📱
-# @raycast.packageName Scrcpy in High Quality Mode
+# @raycast.packageName scrcpy-high
 
 # Documentation:
 # @raycast.description Launch scrcpy in high quality mode (recommended for wired connections)

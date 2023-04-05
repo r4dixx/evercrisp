@@ -7,10 +7,10 @@
 
 # Optional parameters:
 # @raycast.icon 📱
-# @raycast.packageName Scrcpy
+# @raycast.packageName scrcpy
 
 # Documentation:
-# @raycast.description Launch scrcpy in high quality mode (recommended for wired connections)
+# @raycast.description Launch scrcpy
 # @raycast.author r4dixx
 # @raycast.authorURL https://r4dixx.github.io/
 
