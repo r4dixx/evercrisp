@@ -77,6 +77,9 @@ symbol = " "
 [golang]
 symbol = " "
 
+[gradle]
+symbol = "󰟆 "
+
 [helm]
 symbol = "ﴱ "
 
@@ -108,7 +111,7 @@ symbol = " "
 symbol = " "
 
 [ocaml]
-symbol = "🐫 "
+symbol = " "
 
 [openstack]
 symbol = " "
