@@ -1,8 +1,14 @@
 # evercrisp
+# https://github.com/r4dixx/evercrisp
 alias evercrisp='git --git-dir=$HOME/.evercrisp --work-tree=$HOME'
 
+# Daemon Hunter
+# https://github.com/PaulWoitaschek/DaemonHunter
+alias daemon-hunter='~/Dev/Android/DaemonHunter/kill-daemons.main.kts'
+
 # scrcpy
-alias scrcpy-custom='scrcpy --prefer-text --stay-awake --disable-screensaver --turn-screen-off --show-touches'
+# https://github.com/Genymobile/scrcpy
+alias scrcpy-custom='scrcpy --stay-awake --disable-screensaver --turn-screen-off --show-touches'
 alias scrcpy-low='scrcpy-custom --video-bit-rate 2M --max-size 800 --max-fps 30'
 alias scrcpy-high='scrcpy-custom --video-bit-rate 200M'
 
