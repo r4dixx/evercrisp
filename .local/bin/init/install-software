@@ -25,7 +25,7 @@ echo -e
 
 cd $HOME/.package_lists
 
-echo "${bold}Restoring pip packages...${normal}"
+echo "${bold}Installing pip packages...${normal}"
 
 echo -e
 
@@ -33,7 +33,7 @@ pip install -r pip_list
 
 echo -e
 
-echo "${bold}Restoring gem packages...${normal}"
+echo "${bold}Installing gem packages...${normal}"
 
 echo -e
 
@@ -41,7 +41,7 @@ xargs gem install < gem_list
 
 echo -e
 
-echo "${bold}Restoring npm packages...${normal}"
+echo "${bold}Installing npm packages...${normal}"
 
 echo -e
 
