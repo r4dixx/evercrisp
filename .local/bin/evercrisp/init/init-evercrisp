@@ -36,7 +36,7 @@ fi
 echo -e
 
 echo "Checking out files..."
-$evercrisp checkout
+$evercrisp checkout -f
 echo "Done."
 
 echo -e
