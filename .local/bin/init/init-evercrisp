@@ -5,13 +5,18 @@ evercrisp='/usr/bin/git --git-dir=.evercrisp --work-tree=.'
 echo -e
 
 cd $HOME
-git clone --bare git@github.com:r4dixx/evercrisp-private.git .evercrisp
+
+export GITHUB_USER=yourusername
+export GITHUB_TOKEN=yourtoken
+export GITHUB_REPOSITORY=yourusername/yourrepository
+
+git clone --bare https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY} .evercrisp
 
 echo -e 
 
 echo "Adding r4dixx/evercrisp as upstream (with pushes disabled)..."
 $evercrisp remote add upstream git@github.com:r4dixx/evercrisp.git
-$evercrisp remote set-url --push upstream DISABLED
+$evercrisp remote set-url --push upstream DISABLEDå
 echo "Done."
 
 echo -e
