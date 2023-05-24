@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo -e
+
+echo "Saving existing Homebrew formulaes and App store installs as a list..."
+cd $HOME/.package_lists
+brew bundle dump --force
+echo "Done."
+
+echo -e
+
+echo "Saving other packages as lists..."
+cd $HOME/.package_lists
+pip-chill --no-version > pip_list
+ls `npm root -g` > npm_list
+gem list --no-versions > gem_list
+echo "Done."
