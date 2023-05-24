@@ -5,12 +5,7 @@ evercrisp='/usr/bin/git --git-dir=.evercrisp --work-tree=.'
 echo -e
 
 cd $HOME
-
-export GITHUB_USER=yourusername
-export GITHUB_TOKEN=yourtoken
-export GITHUB_REPOSITORY=yourusername/yourrepository
-
-git clone --bare https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY} .evercrisp
+git clone --bare git@github.com:r4dixx/evercrisp-private.git .evercrisp
 
 echo -e 
 

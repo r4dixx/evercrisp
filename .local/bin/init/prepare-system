@@ -7,11 +7,6 @@ sudo softwareupdate --install-rosetta
 
 echo -e
 
-echo "Installing basic command line tools..."
-xcode-select --install
-
-echo -e
-
 echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
