@@ -1,0 +1,52 @@
+#!/bin/bash
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo -e
+
+echo "${bold}Installing brew formulaes, casks and App Store apps...${normal}"
+
+echo -e
+
+cd $HOME/.package_lists && brew bundle install --verbose
+
+echo -e
+
+echo "${bold}Installing language runtime versions...${normal}"
+
+echo -e
+
+grep -Eo '^[^ ]+' $HOME/.tool-versions | while read plugin ; do asdf plugin-add $plugin ; done
+asdf install
+asdf reshim
+
+echo -e
+
+cd $HOME/.package_lists
+
+echo "${bold}Restoring pip packages...${normal}"
+
+echo -e
+
+pip install -r pip_list
+
+echo -e
+
+echo "${bold}Restoring gem packages...${normal}"
+
+echo -e
+
+xargs gem install < gem_list
+
+echo -e
+
+echo "${bold}Restoring npm packages...${normal}"
+
+echo -e
+
+xargs npm install --global < npm_list
+
+echo -e
+
+echo "${bold}Done${normal}"
