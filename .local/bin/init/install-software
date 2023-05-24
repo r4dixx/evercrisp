@@ -49,4 +49,20 @@ xargs npm install --global < npm_list
 
 echo -e
 
+echo "${bold}Installing vim-plug...${normal}"
+
+echo -e
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo -e
+
+echo "${bold}Installing bash-insulter...${normal}"
+
+echo -e
+
+sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/hkbakke/bash-insulter/master/src/bash.command-not-found
+
+echo -e
+
 echo "${bold}Done${normal}"
