@@ -2,6 +2,11 @@
 
 echo -e
 
+echo "Installing command line tools..."
+xcode-select --install
+
+echo -e
+
 echo "Installing Rosetta 2..."
 sudo softwareupdate --install-rosetta
 
