@@ -13,6 +13,23 @@ cd $HOME/.package_lists && brew bundle install --verbose
 
 echo -e
 
+echo "${bold}Done${normal}"
+
+echo -e
+
+echo "${bold}Removing the quarantine attributes for quicklook plugins...${normal}"
+
+echo -e
+
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+qlmanage -r
+
+echo -e
+
+echo "${bold}Done${normal}"
+
+echo -e
+
 echo "${bold}Installing language runtime versions...${normal}"
 
 echo -e
@@ -20,6 +37,10 @@ echo -e
 grep -Eo '^[^ ]+' $HOME/.tool-versions | while read plugin ; do asdf plugin-add $plugin ; done
 asdf install
 asdf reshim
+
+echo -e
+
+echo "${bold}Done${normal}"
 
 echo -e
 
@@ -33,11 +54,19 @@ pip install -r pip_list
 
 echo -e
 
+echo "${bold}Done${normal}"
+
+echo -e
+
 echo "${bold}Installing gem packages...${normal}"
 
 echo -e
 
 xargs gem install < gem_list
+
+echo -e
+
+echo "${bold}Done${normal}"
 
 echo -e
 
@@ -49,11 +78,19 @@ xargs npm install --global < npm_list
 
 echo -e
 
+echo "${bold}Done${normal}"
+
+echo -e
+
 echo "${bold}Installing vim-plug...${normal}"
 
 echo -e
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo -e
+
+echo "${bold}Done${normal}"
 
 echo -e
 
