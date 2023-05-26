@@ -10,15 +10,10 @@
 [core]
 	editor = vim
 	excludesfile = /Users/asikel/.gitignore_global
-[pull]
-	rebase = false # merge (the default strategy)
-	# rebase = true # rebase
-	# ff = only # fast-forward only
-[push]
-	autoSetupRemote = true
-
 [commit]
 	template = /Users/asikel/.stCommitMsg
+[push]
+	autoSetupRemote = true
 [alias]
 	cleanup-full = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d && git remote prune origin
 	cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d
