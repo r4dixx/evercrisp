@@ -10,8 +10,6 @@
 [core]
 	editor = vim
 	excludesfile = /Users/asikel/.gitignore_global
-[commit]
-	template = /Users/asikel/.stCommitMsg
 [push]
 	autoSetupRemote = true
 [alias]
