@@ -19,16 +19,3 @@
 	cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d
 	cleanup-refs = remote prune origin
 	up = pull --rebase --autostash
-
-# SOURCETREE
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
