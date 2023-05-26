@@ -10,6 +10,10 @@
 [core]
 	editor = vim
 	excludesfile = /Users/asikel/.gitignore_global
+[pull]
+	rebase = false # merge (the default strategy)
+	# rebase = true # rebase
+	# ff = only # fast-forward only
 [push]
 	autoSetupRemote = true
 [alias]
