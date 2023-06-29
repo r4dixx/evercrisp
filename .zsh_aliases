@@ -8,7 +8,7 @@ alias daemon-hunter='~/Dev/Android/DaemonHunter/kill-daemons.main.kts'
 
 # scrcpy
 # https://github.com/Genymobile/scrcpy
-alias scrcpy-custom='scrcpy --stay-awake --disable-screensaver --turn-screen-off --show-touches'
+alias scrcpy-custom='scrcpy --prefer-text --stay-awake --disable-screensaver --turn-screen-off --show-touches'
 alias scrcpy-low='scrcpy-custom --video-bit-rate 2M --max-size 800 --max-fps 30'
 alias scrcpy-high='scrcpy-custom --video-bit-rate 200M'
 
