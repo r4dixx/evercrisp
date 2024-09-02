@@ -25,10 +25,6 @@ plugins=(
 
   ### INCLUDED
 
-  # Autocomplete options for adb commands (including adb -s)
-  # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/adb
-  adb
-
   # Adds integration with asdf
   # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/asdf
   asdf
