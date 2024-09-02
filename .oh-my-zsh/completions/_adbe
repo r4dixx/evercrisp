@@ -30,191 +30,95 @@ _adbe ()
         (command)
             local -a subcommands
             subcommands=(
-				'rotate'
-				'gfx'
-				'overdraw'
-				'layout'
 				'airplane'
-				'battery'
-				'dark'
-				'doze'
-				'jank'
-				'devices'
-				'top-activity'
-				'dump-ui'
-				'mobile-data'
-				'wifi'
-				'rtl'
-				'screenshot'
-				'screenrecord'
-				'dont-keep-activities'
+				'alarm'
 				'animations'
-				'show-taps'
-				'stay-awake-while-charging'
-				'input-text'
-				'press'
-				'open-url'
-				'permission-groups'
-				'permissions'
-				'notifications'
-				'apps'
-				'standby-bucket'
-				'restrict-background'
-				'ls'
-				'rm'
-				'mv'
-				'pull'
-				'push'
-				'cat'
-				'start'
-				'stop'
-				'restart'
-				'force-stop'
-				'clear-data'
 				'app'
-				'install'
-				'uninstall'
+				'apps'
+				'battery'
+				'cat'
+				'clear-data'
+				'dark'
+				'debug-app'
+				'devices'
 				'enable'
 				'disable'
+				'wireless'
+				'dont-keep-activities'
+				'doze'
+				'dump-ui'
+				'force-stop'
+				'gfx'
+				'input-text'
+				'install'
+				'jank'
+				'layout'
+				'location'
+				'ls'
+				'mobile-data'
+				'mv'
+				'notifications'
+				'open-url'
+				'overdraw'
+				'permission-groups'
+				'permissions'
+				'press'
+				'pull'
+				'push'
+				'restart'
+				'restrict-background'
+				'rm'
+				'rotate'
+				'rtl'
 				'screen'
-				'alarm'
+				'screenrecord'
+				'screenshot'
+				'show-taps'
+				'standby-bucket'
+				'start'
+				'stay-awake-while-charging'
+				'stop'
+				'top-activity'
+				'uninstall'
+				'wifi'
             )
             _values 'adbe' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                rotate)
-                    _adbe-rotate
-                ;;
-                gfx)
-                    _adbe-gfx
-                ;;
-                overdraw)
-                    _adbe-overdraw
-                ;;
-                layout)
-                    _adbe-layout
-                ;;
                 airplane)
                     _adbe-airplane
                 ;;
-                battery)
-                    _adbe-battery
-                ;;
-                dark)
-                    _adbe-dark
-                ;;
-                doze)
-                    _adbe-doze
-                ;;
-                jank)
-                    _adbe-jank
-                ;;
-                devices)
-                    _adbe-devices
-                ;;
-                top-activity)
-                    _adbe-top-activity
-                ;;
-                dump-ui)
-                    _adbe-dump-ui
-                ;;
-                mobile-data)
-                    _adbe-mobile-data
-                ;;
-                wifi)
-                    _adbe-wifi
-                ;;
-                rtl)
-                    _adbe-rtl
-                ;;
-                screenshot)
-                    _adbe-screenshot
-                ;;
-                screenrecord)
-                    _adbe-screenrecord
-                ;;
-                dont-keep-activities)
-                    _adbe-dont-keep-activities
+                alarm)
+                    _adbe-alarm
                 ;;
                 animations)
                     _adbe-animations
                 ;;
-                show-taps)
-                    _adbe-show-taps
-                ;;
-                stay-awake-while-charging)
-                    _adbe-stay-awake-while-charging
-                ;;
-                input-text)
-                    _adbe-input-text
-                ;;
-                press)
-                    _adbe-press
-                ;;
-                open-url)
-                    _adbe-open-url
-                ;;
-                permission-groups)
-                    _adbe-permission-groups
-                ;;
-                permissions)
-                    _adbe-permissions
-                ;;
-                notifications)
-                    _adbe-notifications
+                app)
+                    _adbe-app
                 ;;
                 apps)
                     _adbe-apps
                 ;;
-                standby-bucket)
-                    _adbe-standby-bucket
-                ;;
-                restrict-background)
-                    _adbe-restrict-background
-                ;;
-                ls)
-                    _adbe-ls
-                ;;
-                rm)
-                    _adbe-rm
-                ;;
-                mv)
-                    _adbe-mv
-                ;;
-                pull)
-                    _adbe-pull
-                ;;
-                push)
-                    _adbe-push
+                battery)
+                    _adbe-battery
                 ;;
                 cat)
                     _adbe-cat
                 ;;
-                start)
-                    _adbe-start
-                ;;
-                stop)
-                    _adbe-stop
-                ;;
-                restart)
-                    _adbe-restart
-                ;;
-                force-stop)
-                    _adbe-force-stop
-                ;;
                 clear-data)
                     _adbe-clear-data
                 ;;
-                app)
-                    _adbe-app
+                dark)
+                    _adbe-dark
                 ;;
-                install)
-                    _adbe-install
+                debug-app)
+                    _adbe-debug-app
                 ;;
-                uninstall)
-                    _adbe-uninstall
+                devices)
+                    _adbe-devices
                 ;;
                 enable)
                     _adbe-enable
@@ -222,284 +126,124 @@ _adbe ()
                 disable)
                     _adbe-disable
                 ;;
+                wireless)
+                    _adbe-wireless
+                ;;
+                dont-keep-activities)
+                    _adbe-dont-keep-activities
+                ;;
+                doze)
+                    _adbe-doze
+                ;;
+                dump-ui)
+                    _adbe-dump-ui
+                ;;
+                force-stop)
+                    _adbe-force-stop
+                ;;
+                gfx)
+                    _adbe-gfx
+                ;;
+                input-text)
+                    _adbe-input-text
+                ;;
+                install)
+                    _adbe-install
+                ;;
+                jank)
+                    _adbe-jank
+                ;;
+                layout)
+                    _adbe-layout
+                ;;
+                location)
+                    _adbe-location
+                ;;
+                ls)
+                    _adbe-ls
+                ;;
+                mobile-data)
+                    _adbe-mobile-data
+                ;;
+                mv)
+                    _adbe-mv
+                ;;
+                notifications)
+                    _adbe-notifications
+                ;;
+                open-url)
+                    _adbe-open-url
+                ;;
+                overdraw)
+                    _adbe-overdraw
+                ;;
+                permission-groups)
+                    _adbe-permission-groups
+                ;;
+                permissions)
+                    _adbe-permissions
+                ;;
+                press)
+                    _adbe-press
+                ;;
+                pull)
+                    _adbe-pull
+                ;;
+                push)
+                    _adbe-push
+                ;;
+                restart)
+                    _adbe-restart
+                ;;
+                restrict-background)
+                    _adbe-restrict-background
+                ;;
+                rm)
+                    _adbe-rm
+                ;;
+                rotate)
+                    _adbe-rotate
+                ;;
+                rtl)
+                    _adbe-rtl
+                ;;
                 screen)
                     _adbe-screen
                 ;;
-                alarm)
-                    _adbe-alarm
+                screenrecord)
+                    _adbe-screenrecord
+                ;;
+                screenshot)
+                    _adbe-screenshot
+                ;;
+                show-taps)
+                    _adbe-show-taps
+                ;;
+                standby-bucket)
+                    _adbe-standby-bucket
+                ;;
+                start)
+                    _adbe-start
+                ;;
+                stay-awake-while-charging)
+                    _adbe-stay-awake-while-charging
+                ;;
+                stop)
+                    _adbe-stop
+                ;;
+                top-activity)
+                    _adbe-top-activity
+                ;;
+                uninstall)
+                    _adbe-uninstall
+                ;;
+                wifi)
+                    _adbe-wifi
                 ;;
             esac
         ;;
     esac
 
-}
-
-_adbe-rotate ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'landscape'
-				'portrait'
-				'left'
-				'right'
-            )
-            _values 'adbe rotate' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                landscape)
-                    _adbe-rotate-landscape
-                ;;
-                portrait)
-                    _adbe-rotate-portrait
-                ;;
-                left)
-                    _adbe-rotate-left
-                ;;
-                right)
-                    _adbe-rotate-right
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-rotate-landscape ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-rotate-portrait ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-rotate-left ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-rotate-right ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-gfx ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-				'lines'
-            )
-            _values 'adbe gfx' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-gfx-on
-                ;;
-                off)
-                    _adbe-gfx-off
-                ;;
-                lines)
-                    _adbe-gfx-lines
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-gfx-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-gfx-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-gfx-lines ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-overdraw ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-				'deut'
-            )
-            _values 'adbe overdraw' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-overdraw-on
-                ;;
-                off)
-                    _adbe-overdraw-off
-                ;;
-                deut)
-                    _adbe-overdraw-deut
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-overdraw-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-overdraw-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-overdraw-deut ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-layout ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe layout' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-layout-on
-                ;;
-                off)
-                    _adbe-layout-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-layout-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-layout-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
 }
 
 _adbe-airplane ()
@@ -555,7 +299,7 @@ _adbe-airplane-off ()
         
 }
 
-_adbe-battery ()
+_adbe-alarm ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -568,23 +312,27 @@ _adbe-battery ()
         (command)
             local -a subcommands
             subcommands=(
-				'level'
-				'saver'
-				'reset'
+				'all'
+				'top'
+				'pending'
+				'history'
             )
-            _values 'adbe battery' $subcommands
+            _values 'adbe alarm' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                level)
-                    _adbe-battery-level
+                all)
+                    _adbe-alarm-all
                 ;;
-                saver)
-                    _adbe-battery-saver
+                top)
+                    _adbe-alarm-top
                 ;;
-                reset)
-                    _adbe-battery-reset
+                pending)
+                    _adbe-alarm-pending
+                ;;
+                history)
+                    _adbe-alarm-history
                 ;;
             esac
         ;;
@@ -592,55 +340,7 @@ _adbe-battery ()
 
 }
 
-_adbe-battery-level ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<percentage>')
-        _message_next_arg
-    fi
-}
-
-_adbe-battery-saver ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe battery saver' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-battery-saver-on
-                ;;
-                off)
-                    _adbe-battery-saver-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-battery-saver-on ()
+_adbe-alarm-all ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -650,7 +350,7 @@ _adbe-battery-saver-on ()
         
 }
 
-_adbe-battery-saver-off ()
+_adbe-alarm-top ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -660,7 +360,7 @@ _adbe-battery-saver-off ()
         
 }
 
-_adbe-battery-reset ()
+_adbe-alarm-pending ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -670,481 +370,7 @@ _adbe-battery-reset ()
         
 }
 
-_adbe-dark ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'mode'
-            )
-            _values 'adbe dark' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                mode)
-                    _adbe-dark-mode
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-dark-mode ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe dark mode' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-dark-mode-on
-                ;;
-                off)
-                    _adbe-dark-mode-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-dark-mode-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-dark-mode-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-doze ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe doze' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-doze-on
-                ;;
-                off)
-                    _adbe-doze-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-doze-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-doze-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-jank ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-devices ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-top-activity ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-dump-ui ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<xml_file>')
-        _message_next_arg
-    fi
-}
-
-_adbe-mobile-data ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-				'saver'
-            )
-            _values 'adbe mobile data' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-mobile-data-on
-                ;;
-                off)
-                    _adbe-mobile-data-off
-                ;;
-                saver)
-                    _adbe-mobile-data-saver
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-mobile-data-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-mobile-data-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-mobile-data-saver ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe mobile data saver' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-mobile-data-saver-on
-                ;;
-                off)
-                    _adbe-mobile-data-saver-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-mobile-data-saver-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-mobile-data-saver-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-wifi ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe wifi' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-wifi-on
-                ;;
-                off)
-                    _adbe-wifi-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-wifi-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-wifi-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-rtl ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe rtl' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-rtl-on
-                ;;
-                off)
-                    _adbe-rtl-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-rtl-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-rtl-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-screenshot ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<filename.png>')
-        _message_next_arg
-    fi
-}
-
-_adbe-screenrecord ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<filename.mp4>')
-        _message_next_arg
-    fi
-}
-
-_adbe-dont-keep-activities ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe dont keep activities' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-dont-keep-activities-on
-                ;;
-                off)
-                    _adbe-dont-keep-activities-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-dont-keep-activities-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-dont-keep-activities-off ()
+_adbe-alarm-history ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1207,7 +433,7 @@ _adbe-animations-off ()
         
 }
 
-_adbe-show-taps ()
+_adbe-app ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1220,19 +446,27 @@ _adbe-show-taps ()
         (command)
             local -a subcommands
             subcommands=(
-				'on'
-				'off'
+				'backup'
+				'info'
+				'path'
+				'signature'
             )
-            _values 'adbe show taps' $subcommands
+            _values 'adbe app' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                on)
-                    _adbe-show-taps-on
+                backup)
+                    _adbe-app-backup
                 ;;
-                off)
-                    _adbe-show-taps-off
+                info)
+                    _adbe-app-info
+                ;;
+                path)
+                    _adbe-app-path
+                ;;
+                signature)
+                    _adbe-app-signature
                 ;;
             esac
         ;;
@@ -1240,80 +474,7 @@ _adbe-show-taps ()
 
 }
 
-_adbe-show-taps-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-show-taps-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-stay-awake-while-charging ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'on'
-				'off'
-            )
-            _values 'adbe stay awake while charging' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                on)
-                    _adbe-stay-awake-while-charging-on
-                ;;
-                off)
-                    _adbe-stay-awake-while-charging-off
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-stay-awake-while-charging-on ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-stay-awake-while-charging-off ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-input-text ()
+_adbe-app-backup ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1323,134 +484,12 @@ _adbe-input-text ()
         ':command:->command' \
 
     else
-        myargs=('<text>')
+        myargs=('<app_name>' '<backup_tar_file_path>')
         _message_next_arg
     fi
 }
 
-_adbe-press ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'back'
-            )
-            _values 'adbe press' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                back)
-                    _adbe-press-back
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-press-back ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-open-url ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<url>')
-        _message_next_arg
-    fi
-}
-
-_adbe-permission-groups ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'list'
-            )
-            _values 'adbe permission groups' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                list)
-                    _adbe-permission-groups-list
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-permission-groups-list ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'all'
-            )
-            _values 'adbe permission groups list' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                all)
-                    _adbe-permission-groups-list-all
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-permission-groups-list-all ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        
-}
-
-_adbe-permissions ()
+_adbe-app-info ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1465,43 +504,34 @@ _adbe-permissions ()
     fi
 }
 
-_adbe-notifications ()
+_adbe-app-path ()
 {
     local context state state_descr line
     typeset -A opt_args
 
-    _arguments -C \
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
         ':command:->command' \
-        '*::options:->options'
 
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'list'
-            )
-            _values 'adbe notifications' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                list)
-                    _adbe-notifications-list
-                ;;
-            esac
-        ;;
-    esac
-
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
 }
 
-_adbe-notifications-list ()
+_adbe-app-signature ()
 {
     local context state state_descr line
     typeset -A opt_args
 
-    _arguments -C \
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
         ':command:->command' \
-        
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
 }
 
 _adbe-apps ()
@@ -1628,7 +658,7 @@ _adbe-apps-list-backup-enabled ()
         
 }
 
-_adbe-standby-bucket ()
+_adbe-battery ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1641,19 +671,23 @@ _adbe-standby-bucket ()
         (command)
             local -a subcommands
             subcommands=(
-				'get'
-				'set'
+				'level'
+				'reset'
+				'saver'
             )
-            _values 'adbe standby bucket' $subcommands
+            _values 'adbe battery' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                get)
-                    _adbe-standby-bucket-get
+                level)
+                    _adbe-battery-level
                 ;;
-                set)
-                    _adbe-standby-bucket-set
+                reset)
+                    _adbe-battery-reset
+                ;;
+                saver)
+                    _adbe-battery-saver
                 ;;
             esac
         ;;
@@ -1661,7 +695,100 @@ _adbe-standby-bucket ()
 
 }
 
-_adbe-standby-bucket-get ()
+_adbe-battery-level ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<percentage>')
+        _message_next_arg
+    fi
+}
+
+_adbe-battery-reset ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-battery-saver ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe battery saver' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-battery-saver-on
+                ;;
+                off)
+                    _adbe-battery-saver-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-battery-saver-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-battery-saver-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-cat ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<file_path>')
+        _message_next_arg
+    fi
+}
+
+_adbe-clear-data ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1676,7 +803,339 @@ _adbe-standby-bucket-get ()
     fi
 }
 
-_adbe-standby-bucket-set ()
+_adbe-dark ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'mode'
+            )
+            _values 'adbe dark' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                mode)
+                    _adbe-dark-mode
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-dark-mode ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe dark mode' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-dark-mode-on
+                ;;
+                off)
+                    _adbe-dark-mode-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-dark-mode-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-dark-mode-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-debug-app ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'set'
+				'clear'
+            )
+            _values 'adbe debug app' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                set)
+                    _adbe-debug-app-set
+                ;;
+                clear)
+                    _adbe-debug-app-clear
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-debug-app-set ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+		'(-w)-w' \
+		'(-p)-p' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-debug-app-clear ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-devices ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-enable ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-disable ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-wireless ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'debugging'
+            )
+            _values 'adbe wireless' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                debugging)
+                    _adbe-wireless-debugging
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-wireless-debugging ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-dont-keep-activities ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe dont keep activities' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-dont-keep-activities-on
+                ;;
+                off)
+                    _adbe-dont-keep-activities-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-dont-keep-activities-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-dont-keep-activities-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-doze ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe doze' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-doze-on
+                ;;
+                off)
+                    _adbe-doze-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-doze-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-doze-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-dump-ui ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<xml_file>')
+        _message_next_arg
+    fi
+}
+
+_adbe-force-stop ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1691,7 +1150,104 @@ _adbe-standby-bucket-set ()
     fi
 }
 
-_adbe-restrict-background ()
+_adbe-gfx ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+				'lines'
+            )
+            _values 'adbe gfx' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-gfx-on
+                ;;
+                off)
+                    _adbe-gfx-off
+                ;;
+                lines)
+                    _adbe-gfx-lines
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-gfx-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-gfx-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-gfx-lines ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-input-text ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<text>')
+        _message_next_arg
+    fi
+}
+
+_adbe-install ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<file_path>')
+        _message_next_arg
+    fi
+}
+
+_adbe-jank ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1704,6 +1260,112 @@ _adbe-restrict-background ()
         myargs=('<app_name>')
         _message_next_arg
     fi
+}
+
+_adbe-layout ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe layout' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-layout-on
+                ;;
+                off)
+                    _adbe-layout-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-layout-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-layout-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-location ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe location' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-location-on
+                ;;
+                off)
+                    _adbe-location-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-location-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-location-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
 }
 
 _adbe-ls ()
@@ -1725,22 +1387,114 @@ _adbe-ls ()
     fi
 }
 
-_adbe-rm ()
+_adbe-mobile-data ()
 {
     local context state state_descr line
     typeset -A opt_args
 
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
+    _arguments -C \
         ':command:->command' \
-		'(-f)-f[For forced deletion of a file, only valid for "rm" command]' \
-		'(-R)-R[For recursive directory listing, only valid for "ls" and "rm" command]' \
-		'(-r)-r[For delete file, only valid for "ls" and "rm" command]' \
+        '*::options:->options'
 
-    else
-        myargs=('<file_path>')
-        _message_next_arg
-    fi
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+				'saver'
+            )
+            _values 'adbe mobile data' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-mobile-data-on
+                ;;
+                off)
+                    _adbe-mobile-data-off
+                ;;
+                saver)
+                    _adbe-mobile-data-saver
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-mobile-data-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-mobile-data-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-mobile-data-saver ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe mobile data saver' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-mobile-data-saver-on
+                ;;
+                off)
+                    _adbe-mobile-data-saver-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-mobile-data-saver-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-mobile-data-saver-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
 }
 
 _adbe-mv ()
@@ -1757,6 +1511,249 @@ _adbe-mv ()
         myargs=('<src_path>' '<dest_path>')
         _message_next_arg
     fi
+}
+
+_adbe-notifications ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'list'
+            )
+            _values 'adbe notifications' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                list)
+                    _adbe-notifications-list
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-notifications-list ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-open-url ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<url>')
+        _message_next_arg
+    fi
+}
+
+_adbe-overdraw ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+				'deut'
+            )
+            _values 'adbe overdraw' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-overdraw-on
+                ;;
+                off)
+                    _adbe-overdraw-off
+                ;;
+                deut)
+                    _adbe-overdraw-deut
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-overdraw-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-overdraw-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-overdraw-deut ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-permission-groups ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'list'
+            )
+            _values 'adbe permission groups' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                list)
+                    _adbe-permission-groups-list
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-permission-groups-list ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'all'
+            )
+            _values 'adbe permission groups list' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                all)
+                    _adbe-permission-groups-list-all
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-permission-groups-list-all ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-permissions ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-press ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'back'
+            )
+            _values 'adbe press' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                back)
+                    _adbe-press-back
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-press-back ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
 }
 
 _adbe-pull ()
@@ -1791,51 +1788,6 @@ _adbe-push ()
     fi
 }
 
-_adbe-cat ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<file_path>')
-        _message_next_arg
-    fi
-}
-
-_adbe-start ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-stop ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
 _adbe-restart ()
 {
     local context state state_descr line
@@ -1851,7 +1803,7 @@ _adbe-restart ()
     fi
 }
 
-_adbe-force-stop ()
+_adbe-restrict-background ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1866,7 +1818,7 @@ _adbe-force-stop ()
     fi
 }
 
-_adbe-clear-data ()
+_adbe-rm ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -1874,122 +1826,9 @@ _adbe-clear-data ()
     if [[ $words[$CURRENT] == -* ]] ; then
         _arguments -C \
         ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-app ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'info'
-				'path'
-				'signature'
-				'backup'
-            )
-            _values 'adbe app' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                info)
-                    _adbe-app-info
-                ;;
-                path)
-                    _adbe-app-path
-                ;;
-                signature)
-                    _adbe-app-signature
-                ;;
-                backup)
-                    _adbe-app-backup
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-app-info ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-app-path ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-app-signature ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-app-backup ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-
-    else
-        myargs=('<app_name>' '<backup_tar_file_path>')
-        _message_next_arg
-    fi
-}
-
-_adbe-install ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
+		'(-f)-f[For forced deletion of a file, only valid for "rm" command]' \
+		'(-R)-R[For recursive directory listing, only valid for "ls" and "rm" command]' \
+		'(-r)-r[For delete file, only valid for "ls" and "rm" command]' \
 
     else
         myargs=('<file_path>')
@@ -1997,23 +1836,7 @@ _adbe-install ()
     fi
 }
 
-_adbe-uninstall ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    if [[ $words[$CURRENT] == -* ]] ; then
-        _arguments -C \
-        ':command:->command' \
-		'(--first-user)--first-user' \
-
-    else
-        myargs=('<app_name>')
-        _message_next_arg
-    fi
-}
-
-_adbe-enable ()
+_adbe-rotate ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2026,15 +1849,27 @@ _adbe-enable ()
         (command)
             local -a subcommands
             subcommands=(
-				'wireless'
+				'landscape'
+				'portrait'
+				'left'
+				'right'
             )
-            _values 'adbe enable' $subcommands
+            _values 'adbe rotate' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                wireless)
-                    _adbe-enable-wireless
+                landscape)
+                    _adbe-rotate-landscape
+                ;;
+                portrait)
+                    _adbe-rotate-portrait
+                ;;
+                left)
+                    _adbe-rotate-left
+                ;;
+                right)
+                    _adbe-rotate-right
                 ;;
             esac
         ;;
@@ -2042,36 +1877,7 @@ _adbe-enable ()
 
 }
 
-_adbe-enable-wireless ()
-{
-    local context state state_descr line
-    typeset -A opt_args
-
-    _arguments -C \
-        ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'debugging'
-            )
-            _values 'adbe enable wireless' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                debugging)
-                    _adbe-enable-wireless-debugging
-                ;;
-            esac
-        ;;
-    esac
-
-}
-
-_adbe-enable-wireless-debugging ()
+_adbe-rotate-landscape ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2081,7 +1887,37 @@ _adbe-enable-wireless-debugging ()
         
 }
 
-_adbe-disable ()
+_adbe-rotate-portrait ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-rotate-left ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-rotate-right ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-rtl ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2094,15 +1930,19 @@ _adbe-disable ()
         (command)
             local -a subcommands
             subcommands=(
-				'wireless'
+				'on'
+				'off'
             )
-            _values 'adbe disable' $subcommands
+            _values 'adbe rtl' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                wireless)
-                    _adbe-disable-wireless
+                on)
+                    _adbe-rtl-on
+                ;;
+                off)
+                    _adbe-rtl-off
                 ;;
             esac
         ;;
@@ -2110,36 +1950,17 @@ _adbe-disable ()
 
 }
 
-_adbe-disable-wireless ()
+_adbe-rtl-on ()
 {
     local context state state_descr line
     typeset -A opt_args
 
     _arguments -C \
         ':command:->command' \
-        '*::options:->options'
-
-    case $state in
-        (command)
-            local -a subcommands
-            subcommands=(
-				'debugging'
-            )
-            _values 'adbe disable wireless' $subcommands
-        ;;
-
-        (options)
-            case $line[1] in
-                debugging)
-                    _adbe-disable-wireless-debugging
-                ;;
-            esac
-        ;;
-    esac
-
+        
 }
 
-_adbe-disable-wireless-debugging ()
+_adbe-rtl-off ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2216,7 +2037,37 @@ _adbe-screen-toggle ()
         
 }
 
-_adbe-alarm ()
+_adbe-screenrecord ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<filename.mp4>')
+        _message_next_arg
+    fi
+}
+
+_adbe-screenshot ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<filename.png>')
+        _message_next_arg
+    fi
+}
+
+_adbe-show-taps ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2229,27 +2080,19 @@ _adbe-alarm ()
         (command)
             local -a subcommands
             subcommands=(
-				'all'
-				'top'
-				'pending'
-				'history'
+				'on'
+				'off'
             )
-            _values 'adbe alarm' $subcommands
+            _values 'adbe show taps' $subcommands
         ;;
 
         (options)
             case $line[1] in
-                all)
-                    _adbe-alarm-all
+                on)
+                    _adbe-show-taps-on
                 ;;
-                top)
-                    _adbe-alarm-top
-                ;;
-                pending)
-                    _adbe-alarm-pending
-                ;;
-                history)
-                    _adbe-alarm-history
+                off)
+                    _adbe-show-taps-off
                 ;;
             esac
         ;;
@@ -2257,7 +2100,7 @@ _adbe-alarm ()
 
 }
 
-_adbe-alarm-all ()
+_adbe-show-taps-on ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2267,7 +2110,7 @@ _adbe-alarm-all ()
         
 }
 
-_adbe-alarm-top ()
+_adbe-show-taps-off ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2277,7 +2120,118 @@ _adbe-alarm-top ()
         
 }
 
-_adbe-alarm-pending ()
+_adbe-standby-bucket ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'get'
+				'set'
+            )
+            _values 'adbe standby bucket' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                get)
+                    _adbe-standby-bucket-get
+                ;;
+                set)
+                    _adbe-standby-bucket-set
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-standby-bucket-get ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-standby-bucket-set ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-start ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-stay-awake-while-charging ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe stay awake while charging' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-stay-awake-while-charging-on
+                ;;
+                off)
+                    _adbe-stay-awake-while-charging-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-stay-awake-while-charging-on ()
 {
     local context state state_descr line
     typeset -A opt_args
@@ -2287,7 +2241,101 @@ _adbe-alarm-pending ()
         
 }
 
-_adbe-alarm-history ()
+_adbe-stay-awake-while-charging-off ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-stop ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-top-activity ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-uninstall ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    if [[ $words[$CURRENT] == -* ]] ; then
+        _arguments -C \
+        ':command:->command' \
+		'(--first-user)--first-user' \
+
+    else
+        myargs=('<app_name>')
+        _message_next_arg
+    fi
+}
+
+_adbe-wifi ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        '*::options:->options'
+
+    case $state in
+        (command)
+            local -a subcommands
+            subcommands=(
+				'on'
+				'off'
+            )
+            _values 'adbe wifi' $subcommands
+        ;;
+
+        (options)
+            case $line[1] in
+                on)
+                    _adbe-wifi-on
+                ;;
+                off)
+                    _adbe-wifi-off
+                ;;
+            esac
+        ;;
+    esac
+
+}
+
+_adbe-wifi-on ()
+{
+    local context state state_descr line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':command:->command' \
+        
+}
+
+_adbe-wifi-off ()
 {
     local context state state_descr line
     typeset -A opt_args
