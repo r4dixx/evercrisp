@@ -1,23 +1,26 @@
-# PATHS
-[includeIf "gitdir:~/Dev/Repos/Perso/"]
-	path = .gitconfig_user_perso
-[includeIf "gitdir:~/Dev/Repos/Pro/"]
-	path = .gitconfig_user_pro
-
-# SHARED
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
+[includeIf "gitdir:~/Dev/Repos/GitHub/"]
+  path = .gitconfig_user_github
+
+[includeIf "gitdir:~/Dev/Repos/GitLab/"]
+  path = .gitconfig_user_gitlab
+
 [core]
-	editor = vim
-	excludesfile = /Users/asikel/.gitignore_global
+  editor = vim
+  excludesfile = /Users/asikel/.gitignore_global
+
 [pull]
-	rebase = false # merge (the default strategy)
-	# rebase = true # rebase
-	# ff = only # fast-forward only
+  rebase = false # merge (the default strategy)
+  # rebase = true # rebase
+  # ff = only # fast-forward only
+
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+
 [alias]
-	cleanup-full = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d && git remote prune origin
-	cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d
-	cleanup-refs = remote prune origin
-	up = pull --rebase --autostash
+  cleanup-full = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d && git remote prune origin
+  cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d
+  cleanup-refs = remote prune origin
+  up = pull --rebase --autostash
