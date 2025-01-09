@@ -16,7 +16,7 @@ PROMPT_EOL_MARK=''
 
 # Uncomment the following lines to change the auto-update behavior
 zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically withou889t asking
+# zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 ###############################################################################
@@ -142,22 +142,17 @@ fi;
 
 ###############################################################################
 
-# WARNING! THIS MUST REMAIN AT THE END OF THE FILE
-# Because other scripts may overwrite the settings it needs, such as `PROMPT_COMMAND`
-# https://iterm2.com/documentation-shell-integration.html
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# WARNING! THESE MUST REMAIN AT THE END OF THE FILE
 
-# WARNING! THIS MUST REMAIN AT THE END OF THE FILE
-# See why: https://github.com/zsh-users/zsh-syntax-highlighting#faq
-source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-###############################################################################
-
-# Now that everything is ready 
-
-# Init starship theme
+# Starship theme
 # https://starship.rs/guide/#%F0%9F%9A%80-installation
 eval "$(starship init zsh)"
 
-# Trigger a custom command
-neofetch --ascii_distro android --color_blocks off
+# ZSH Syntax Highlighting
+# See why: https://github.com/zsh-users/zsh-syntax-highlighting#faq
+source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# iTerm2 shell integration
+# Because other scripts may overwrite the settings iTerm2 needs, such as `PROMPT_COMMAND`
+# https://iterm2.com/documentation-shell-integration.html
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
