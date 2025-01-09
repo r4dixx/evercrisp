@@ -4,6 +4,10 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<false/>
+	<key>ClickToSelectCommand</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Material Palenight</key>
@@ -714,6 +718,10 @@
 			<integer>1</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Text</key>
+			<string></string>
+			<key>Initial Use Transparency</key>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1164,6 +1172,21 @@
 				<key>Red Component</key>
 				<real>0.50980395078659058</real>
 			</dict>
+			<key>Load Shell Integration Automatically</key>
+			<true/>
+			<key>Match Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1178,6 +1201,8 @@
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
+			<key>Place Prompt at First Column</key>
+			<true/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1224,19 +1249,6 @@
 			<false/>
 			<key>Sync Title</key>
 			<false/>
-			<key>Tab Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
-				<key>Blue Component</key>
-				<real>0.24313725490196078</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.17647058823529413</real>
-				<key>Red Component</key>
-				<real>0.16078431372549021</real>
-			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
@@ -1312,6 +1324,8 @@
 	<true/>
 	<key>SaveToPasteHistoryWhenSecureInputEnabled</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
