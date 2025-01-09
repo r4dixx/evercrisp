@@ -18,3 +18,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Initialize plugin system
 call plug#end()
+
+" Display line numbers
+set number
+
+" Enable scrollwheel in VIM inside GNU Screen
+set mouse=a
+set ttymouse=xterm2
