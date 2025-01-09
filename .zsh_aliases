@@ -15,6 +15,7 @@ alias scrcpy-high='scrcpy-custom --video-bit-rate 200M'
 # srt-clean
 alias srt-clean-recursively='find . -name "*.srt" -exec srt-clean "{}" \;'
 
-# plexmediaserver
-alias sshfs-mount-pms='sshfs asus:PMS ~/PMS -ovolname=Plex\ Media\ Server'
-alias sshfs-unmount-pms='umount ~/PMS'
+# plex
+alias sshfs-mount-plex='sshfs asus:/mnt/plex /Volumes/Plex\ HD -ovolname=Plex\ HD'
+alias sshfs-unmount-plex='umount /Volumes/Plex\ HD'
+
