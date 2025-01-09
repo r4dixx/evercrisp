@@ -9,11 +9,11 @@ error_symbol = "[✗](bold red)"
 ssh_only = true
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [battery]
-charging_symbol = " charging... "
-discharging_symbol = " battery at "
+charging_symbol = "󰂄 charging... "
+discharging_symbol = "󰂃 battery at "
 
 [[battery.display]]
 threshold = 15
@@ -39,7 +39,7 @@ behind = "⇣${count}"
 symbol = " "
 
 [package]
-symbol = " "
+symbol = " "
 
 [aws]
 symbol = " "
@@ -93,7 +93,7 @@ symbol = "✦ "
 symbol = " "
 
 [kotlin]
-symbol = "🅺 "
+symbol = " "
 
 [kubernetes]
 symbol = "ﴱ "
@@ -108,7 +108,7 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [ocaml]
 symbol = " "
@@ -147,13 +147,15 @@ symbol = " "
 symbol = "ﯣ "
 
 [terraform]
-symbol = " "
+symbol = "󱁢 "
 
 [vagrant]
-symbol = "🆅 "
+symbol = " "
 
 [vcsh]
 symbol = " "
 
 [zig]
 symbol = "↯ "
+
+
