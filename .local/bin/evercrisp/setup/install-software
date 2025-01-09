@@ -58,14 +58,6 @@ echo "${bold}Done${normal}"
 
 echo -e
 
-echo "${bold}Installing gem packages...${normal}"
-
-echo -e
-
-xargs gem install < gem_list
-
-echo -e
-
 echo "${bold}Done${normal}"
 
 echo -e

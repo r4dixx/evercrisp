@@ -16,5 +16,4 @@ echo "${bold}Saving other packages as lists...${normal}"
 cd $HOME/.package_lists
 pip-chill --no-version > pip_list
 ls `npm root -g` > npm_list
-gem list --no-versions > gem_list
 echo "${bold}Done.${normal}"

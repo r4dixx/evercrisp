@@ -1,0 +1,236 @@
+#!/bin/zsh
+
+set -eu
+
+# ANSI color codes for terminal output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+BOLD='\033[1m'
+ITALIC='\033[3m'
+NC='\033[0m' # No Color
+
+REMOTE_HOST="asus"
+REMOTE_BASE_PATH="/mnt/plex"
+DEFAULT_DESTINATION="/data/staging"
+DEFAULT_SOURCE="$HOME/Plex Staging"  # Changed default source
+
+RSYNC_OPTIONS=(
+    --archive
+    --verbose
+    --progress
+    --human-readable
+    --stats
+    --partial
+    --partial-dir=.rsync-partial
+)
+
+DEFAULT_EXCLUDES=(
+    '.DS_Store'
+    '._*'
+    '.Spotlight-V100'
+    '.Trashes'
+    '.tmp'
+    '*.tmp'
+    '*.temp'
+    'Thumbs.db'
+    'desktop.ini'
+)
+
+MOVE=false
+DRY_RUN=false
+QUIET=false
+INTERACTIVE=false
+SOURCE=""
+DESTINATION=""
+
+# Function to display usage instructions
+usage() {
+    echo -e "${BOLD}Usage:${NC} $0 [options] [source] [destination]"
+    echo -e
+    echo -e "${BLUE}Options:${NC}"
+    echo -e "    -h, --help         Show this help message"
+    echo -e "    -c, --copy         Copy files (default behavior)"
+    echo -e "    -m, --move         Move files (delete after successful transfer)"
+    echo -e "    -n, --dry-run      Perform a dry run without transferring files"
+    echo -e "    -q, --quiet        Suppress output, except for errors"
+    echo -e "    -i, --interactive  Interactive mode to input parameters via prompts"
+    echo -e
+    echo -e "${BLUE}Source:${NC}        Local file or directory path (default: $DEFAULT_SOURCE)"
+    echo -e "${BLUE}Destination:${NC}   Remote directory under $REMOTE_HOST:$REMOTE_BASE_PATH (default: $DEFAULT_DESTINATION)"
+}
+
+# Check if ssh and rsync are available
+for cmd in ssh rsync; do
+    if ! command -v $cmd > /dev/null; then
+        echo "${RED}Error:${NC} '$cmd' command not found. Please ensure it is installed and available in your PATH. ❌"
+        exit 1
+    fi
+done
+
+# Parse command line arguments
+while (( $# > 0 )); do
+    case "$1" in
+        -h|--help)
+            usage
+            exit 0
+            ;;
+        -m|--move)
+            MOVE=true
+            shift
+            ;;
+        -n|--dry-run)
+            DRY_RUN=true
+            shift
+            ;;
+        -q|--quiet)
+            QUIET=true
+            shift
+            ;;
+        -c|--copy)
+            MOVE=false
+            shift
+            ;;
+        -i|--interactive)
+            INTERACTIVE=true
+            shift
+            ;;
+        -*)
+            echo "${RED}Error:${NC} Unknown option: $1 ❗" >&2
+            usage
+            exit 1
+            ;;
+        *)
+            if [ -z "$SOURCE" ]; then
+                SOURCE="$1"
+            elif [ -z "$DESTINATION" ]; then
+                DESTINATION="$1"
+            else
+                echo "${RED}Error:${NC} Unexpected argument: $1 ❗" >&2
+                usage
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+# If interactive mode is enabled or no source/destination provided
+if [[ $INTERACTIVE == true || (-z "$SOURCE" && -z "$DESTINATION") ]]; then
+    echo -e
+    echo "${YELLOW}Entering interactive mode...${NC} 💬"
+
+    # Prompt for SOURCE (default to current directory)
+    echo -e
+    echo -e "${BLUE}Enter source path (default: $DEFAULT_SOURCE):${NC} \c"
+    read SOURCE
+    SOURCE=${SOURCE:-"$DEFAULT_SOURCE"}
+
+    # Create source directory if it doesn't exist
+    if [[ ! -d "$SOURCE" ]]; then
+        echo "${YELLOW}Creating source directory:${NC} $SOURCE"
+        mkdir -p "$SOURCE"
+    fi
+
+    # Prompt for DESTINATION (default to Staging)
+    echo -e "${BLUE}Enter destination path (default: $DEFAULT_DESTINATION):${NC} \c"
+    read DESTINATION
+    DESTINATION=${DESTINATION:-"$DEFAULT_DESTINATION"}
+
+    # Prompt for move option (yes/no)
+    echo -e "${BLUE}Delete files after transfer? (yes/no, default: no):${NC} \c"
+    read MOVE_INPUT
+    if [[ $MOVE_INPUT == "yes" || $MOVE_INPUT == "y" ]]; then
+        MOVE=true
+    else
+        MOVE=false
+    fi
+fi
+
+# Set defaults if still empty
+SOURCE=${SOURCE:-"$DEFAULT_SOURCE"}
+DESTINATION=${DESTINATION:-"$DEFAULT_DESTINATION"}
+
+# Replace `~` with `$HOME` if present in SOURCE
+SOURCE="${SOURCE/#\~/$HOME}"
+
+# Remove any leading/trailing slashes from DESTINATION
+DESTINATION="${DESTINATION#/}"
+DESTINATION="${DESTINATION%/}"
+
+# Create source directory if it doesn't exist (for non-interactive mode)
+if [[ ! -d "$SOURCE" ]]; then
+    echo "${YELLOW}Creating source directory:${NC} $SOURCE"
+    mkdir -p "$SOURCE"
+fi
+
+# Test SSH connection and create remote path if needed
+if ! ssh "$REMOTE_HOST" "test -d '$REMOTE_BASE_PATH' || mkdir -p '$REMOTE_BASE_PATH'"; then
+    echo "${RED}Error:${NC} Cannot access or create remote base path '$REMOTE_BASE_PATH' on $REMOTE_HOST. ❌"
+    exit 1
+fi
+
+# Create the remote destination directory
+if ! ssh "$REMOTE_HOST" "mkdir -p '$REMOTE_BASE_PATH/$DESTINATION'"; then
+    echo "${RED}Error:${NC} Failed to create remote directory '$REMOTE_BASE_PATH/$DESTINATION'. ❌"
+    exit 1
+fi
+
+# Prepare exclude options
+EXCLUDES=()
+for exclude in "${DEFAULT_EXCLUDES[@]}"; do
+    EXCLUDES+=("--exclude=$exclude")
+done
+
+# Ensure source path ends with / if it's a directory
+if [[ -d "$SOURCE" ]]; then
+    SOURCE="${SOURCE%/}/"
+fi
+
+# Function to display a summary of the current settings
+summary() {
+    echo -e
+    echo "${YELLOW}Summary of the operation:${NC}"
+    echo -e
+    echo -e "  ${BLUE}Source:${NC}         $SOURCE"
+    echo -e "  ${BLUE}Destination:${NC}    $REMOTE_BASE_PATH/$DESTINATION"
+    echo -e "  ${BLUE}Move files:${NC}     $([ "$MOVE" = true ] && echo 'Yes' || echo 'No')"
+    echo -e "  ${BLUE}Dry run:${NC}        $([ "$DRY_RUN" = true ] && echo 'Yes' || echo 'No')"
+    echo -e "  ${BLUE}Quiet mode:${NC}     $([ "$QUIET" = true ] && echo 'Yes' || echo 'No')"
+}
+
+# Confirmation before proceeding
+confirm() {
+    echo -e
+    echo -e "${YELLOW}Do you want to proceed with the above settings? (yes/no):${NC} \c"
+    read CONFIRMATION
+    if [[ "$CONFIRMATION" != "yes" && "$CONFIRMATION" != "y" ]]; then
+        echo "${RED}Operation canceled by the user.${NC} ❌"
+        exit 1
+    fi
+}
+
+# Show summary and prompt for confirmation
+summary
+confirm
+
+# Construct the full remote path
+REMOTE_FULL_PATH="$REMOTE_HOST:$REMOTE_BASE_PATH/$DESTINATION"
+
+# Construct the rsync command
+RSYNC_CMD=(rsync "${RSYNC_OPTIONS[@]}" "${EXCLUDES[@]}" "$SOURCE" "$REMOTE_FULL_PATH")
+
+# Add move, dry-run, and quiet flags to rsync as needed
+[[ $MOVE == true ]] && RSYNC_CMD+=("--remove-source-files")
+[[ $DRY_RUN == true ]] && RSYNC_CMD+=("--dry-run")
+[[ $QUIET == true ]] && RSYNC_CMD+=("--quiet")
+
+# Execute the rsync command
+echo -e
+echo "${GREEN}Starting rsync...${NC} 🚀"
+echo -e
+echo "Transferring to: $REMOTE_FULL_PATH"
+"${RSYNC_CMD[@]}"
+echo -e
+echo "${GREEN}rsync completed successfully!${NC} 🎉"
