@@ -34,7 +34,7 @@ echo "${bold}Installing language runtime versions...${normal}"
 
 echo -e
 
-grep -Eo '^[^ ]+' $HOME/.tool-versions | while read plugin ; do asdf plugin-add $plugin ; done
+grep -Eo '^[^ ]+' $HOME/.tool-versions | while read plugin ; do asdf plugin add $plugin ; done
 asdf install
 asdf reshim
 
