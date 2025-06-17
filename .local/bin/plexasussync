@@ -13,8 +13,8 @@ NC='\033[0m' # No Color
 
 REMOTE_HOST="asus"
 REMOTE_BASE_PATH="/mnt/plex"
-DEFAULT_DESTINATION="/data/staging"
-DEFAULT_SOURCE="$HOME/Plex Staging"  # Changed default source
+DEFAULT_DESTINATION="staging"
+DEFAULT_SOURCE="$HOME/Plex Staging"
 
 RSYNC_OPTIONS=(
     --archive
