@@ -1,26 +1,141 @@
-[init]
-  defaultBranch = main
-
+# PATHS
 [includeIf "gitdir:~/Dev/Repos/GitHub/"]
-  path = .gitconfig_user_github
+	path = .gitconfig_user_github
 
 [includeIf "gitdir:~/Dev/Repos/GitLab/"]
-  path = .gitconfig_user_gitlab
+	path = .gitconfig_user_gitlab
+
+# SHARED
+[init]
+	defaultBranch = main
 
 [core]
-  editor = vim
-  excludesfile = /Users/asikel/.gitignore_global
+	editor = vim
+	excludesfile = /Users/asikel/.gitignore_global
 
 [pull]
-  rebase = false # merge (the default strategy)
-  # rebase = true # rebase
-  # ff = only # fast-forward only
+	rebase = true
 
 [push]
-  autoSetupRemote = true
+	autoSetupRemote = true
 
 [alias]
-  cleanup-full = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d && git remote prune origin
-  cleanup-merged = !git branch --merged | egrep -v \"(^\\*|master|main|develop|dev)\" | xargs git branch -d
-  cleanup-refs = remote prune origin
-  up = pull --rebase --autostash
+	# Enhanced pull with rebase and autostash
+	up = pull --rebase --autostash
+
+	# Update all branches from remote
+	update-all = "!f() { \
+		git fetch --all; \
+		git branch -r | grep -v '\\->' | sed 's/origin\\///' | xargs -I {} git branch --track {} origin/{} 2>/dev/null || true; \
+		git pull --all; \
+	}; f"
+
+	# Sync with upstream (for forks)
+	sync = "!f() { \
+		git fetch upstream; \
+		git checkout main 2>/dev/null || git checkout master; \
+		git merge upstream/main 2>/dev/null || git merge upstream/master; \
+		git push origin; \
+	}; f"
+
+	# --- Enhanced Git Cleanup Aliases (macOS Compatible) ---
+
+	# Clean up only merged branches (safer)
+	cleanup-merged = "!f() { \
+		branches=$(git branch --merged | grep -E -v '(^\\*|\\bmaster\\b|\\bmain\\b|\\bdevelop\\b|\\bdev\\b|\\brelease\\b)'); \
+		if [ -n \"$branches\" ]; then \
+			echo \"$branches\" | xargs git branch -d; \
+		else \
+			echo 'No merged branches to clean up.'; \
+		fi; \
+	}; f"
+
+	# Remove remote tracking references that no longer exist
+	cleanup-refs = remote prune origin
+
+	# Remove branches whose upstream has been deleted (gone branches)
+	cleanup-gone = "!f() { \
+		branches=$(git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {print $1}'); \
+		if [ -n \"$branches\" ]; then \
+			echo \"$branches\" | xargs git branch -D; \
+		else \
+			echo 'No gone branches to clean up.'; \
+		fi; \
+	}; f"
+
+	# Full cleanup - leverages the modular aliases above
+	cleanup-full = "!f() { \
+		echo 'Cleaning up merged branches...'; \
+		git cleanup-merged; \
+		echo 'Pruning remote references...'; \
+		git cleanup-refs; \
+		echo 'Cleaning up stale tracking branches...'; \
+		git cleanup-gone; \
+		echo 'Cleanup complete!'; \
+	}; f"
+
+	# Interactive cleanup - shows what will be deleted before doing it
+	cleanup-interactive = "!f() { \
+		merged=$(git branch --merged | grep -E -v '(^\\*|\\bmaster\\b|\\bmain\\b|\\bdevelop\\b|\\bdev\\b|\\brelease\\b)'); \
+		gone=$(git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {print $1}'); \
+		echo '=== Merged branches that will be deleted ==='; \
+		[ -n \"$merged\" ] && echo \"$merged\" || echo '(None)'; \
+		echo ''; \
+		echo '=== Gone branches that will be deleted ==='; \
+		[ -n \"$gone\" ] && echo \"$gone\" || echo '(None)'; \
+		echo ''; \
+		if [ -n \"$merged\" ] || [ -n \"$gone\" ]; then \
+			read -p 'Proceed with cleanup? (y/N): ' confirm; \
+			if [ \"$confirm\" = 'y' ] || [ \"$confirm\" = 'Y' ]; then \
+				git cleanup-full; \
+			else \
+				echo 'Cleanup cancelled.'; \
+			fi; \
+		else \
+			echo 'Nothing to clean up!'; \
+		fi; \
+	}; f"
+
+	# Show what would be cleaned up without doing it
+	cleanup-dry-run = "!f() { \
+		echo '=== Merged branches (would be deleted) ==='; \
+		git branch --merged | grep -E -v '(^\\*|\\bmaster\\b|\\bmain\\b|\\bdevelop\\b|\\bdev\\b|\\brelease\\b)' || echo '(None)'; \
+		echo ''; \
+		echo '=== Gone branches (would be deleted) ==='; \
+		git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {print $1}' || echo '(None)'; \
+		echo ''; \
+		echo '=== Remote refs (would be pruned) ==='; \
+		git remote prune origin --dry-run; \
+	}; f"
+
+	# Clean up local branches older than X days (default 30)
+	cleanup-old = "!f() { \
+		days=${1:-30}; \
+		echo \"Cleaning branches older than $days days...\"; \
+		branches=$(git for-each-ref --format='%(refname:short) %(committerdate:relative)' refs/heads | \
+		grep -E \"[0-9]+ (month|year)s? ago\" | \
+		grep -E -v '(^\\*|\\bmaster\\b|\\bmain\\b|\\bdevelop\\b|\\bdev\\b|\\brelease\\b)' | \
+		cut -d' ' -f1); \
+		if [ -n \"$branches\" ]; then \
+			echo \"$branches\" | xargs git branch -D; \
+		else \
+			echo 'No old branches to clean up.'; \
+		fi; \
+	}; f"
+
+	# Clean up everything - nuclear option (use with caution)
+	cleanup-nuclear = "!f() { \
+		echo 'WARNING: This will delete ALL local branches except protected ones!'; \
+		read -p 'Are you absolutely sure? Type YES to continue: ' confirm; \
+		if [ \"$confirm\" = 'YES' ]; then \
+			branches=$(git branch | grep -E -v '(^\\*|\\bmaster\\b|\\bmain\\b|\\bdevelop\\b|\\bdev\\b|\\brelease\\b)'); \
+			if [ -n \"$branches\" ]; then \
+				echo \"$branches\" | xargs git branch -D; \
+			fi; \
+			git remote prune origin; \
+			git gc --aggressive --prune=now; \
+			echo 'Nuclear cleanup complete!'; \
+		else \
+			echo 'Nuclear cleanup cancelled.'; \
+		fi; \
+	}; f"
