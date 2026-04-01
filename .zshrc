@@ -105,10 +105,6 @@ plugins=(
   # https://github.com/djui/alias-tips
   alias-tips
 
-  # Zsh completion support for git-flow-avh
-  # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow-avh
-  git-flow-avh
-
   # Suggests commands as you type, based on command history
   # https://github.com/zsh-users/zsh-autosuggestions
   zsh-autosuggestions
