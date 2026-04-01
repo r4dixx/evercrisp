@@ -16,3 +16,6 @@
 [submodule "Dev/Android/DaemonHunter"]
 	path = Dev/Android/DaemonHunter
 	url = git@github.com:PaulWoitaschek/DaemonHunter.git
+[submodule "Dev/Android/deep-clean"]
+	path = Dev/Android/deep-clean
+	url = git@github.com:rock3r/deep-clean.git
