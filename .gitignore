@@ -4,10 +4,9 @@
 .ssh
 .bash_history
 .bash_sessions
-.gitconfig_user_perso
-.gitconfig_user_pro
+.gitconfig_user_github
+.gitconfig_user_gitlab
 .gnupg
-.shpotify.cfg
 .zsh_history
 .zsh_sessions
 .python_history
