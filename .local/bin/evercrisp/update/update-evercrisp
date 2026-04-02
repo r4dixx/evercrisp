@@ -2,7 +2,7 @@
 
 bold=$(tput bold)
 normal=$(tput sgr0)
-evercrisp='git --git-dir=/Users/asikel/.evercrisp --work-tree=/Users/asikel/'
+evercrisp='git --git-dir=/Users/amael/.evercrisp --work-tree=/Users/asikel/'
 
 echo -e;
 echo "${bold}EVERCRISP - STATUS${normal}"; echo -e;
