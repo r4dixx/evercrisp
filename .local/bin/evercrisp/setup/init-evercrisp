@@ -57,5 +57,5 @@ fi
 echo -e
 
 echo "Installing submodules  (oh-my-zsh plugins)"
-$evercrisp submodule update --init --recursive
+evercrisp submodule update --init --recursive
 echo "Done."
