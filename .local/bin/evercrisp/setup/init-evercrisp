@@ -1,6 +1,6 @@
 #!/bin/bash
 
-evercrisp='git --git-dir=.evercrisp --work-tree=.'
+export evercrisp='git --git-dir=.evercrisp --work-tree=.'
 
 echo -e
 
@@ -17,7 +17,7 @@ echo "Done."
 echo -e
 
 echo "Backing up files that would be overwritten by checkout..."
-mkdir -p $HOME/.evercrisp-backup && $evercrisp checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $HOME/.evercrisp-backup/{}
+mkdir -p $HOME/.evercrisp-backup && evercrisp checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $HOME/.evercrisp-backup/{}
 echo "Done"
 
 echo -e
@@ -36,7 +36,7 @@ fi
 echo -e
 
 echo "Checking out files..."
-$evercrisp checkout -f
+evercrisp checkout -f
 echo "Done."
 
 echo -e
@@ -48,7 +48,7 @@ then
     echo "Skipping..."
 elif  [[ $REPLY =~ ^[Yy]$ ]]
 then
-    $evercrisp config --local status.showUntrackedFiles no
+    evercrisp config --local status.showUntrackedFiles no
     echo "Done."
 else 
     echo "Skipping..."
