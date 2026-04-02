@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export evercrisp='git --git-dir=.evercrisp --work-tree=.'
+alias evercrisp='git --git-dir=$HOME/.evercrisp --work-tree=$HOME'
 
 echo -e
 
